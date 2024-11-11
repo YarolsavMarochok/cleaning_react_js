@@ -1,0 +1,32 @@
+.nav_menu{
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    background-color: #133E87;
+    color: #F3F3E0;
+    padding-right: 5rem;
+}
+
+.nav_menu p{
+    padding: 1rem;
+    margin: 0;
+}
+
+.nav_menu ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav_menu ul li{
+    padding: 1rem;
+    padding-left: 1.5rem;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.nav_menu ul li:hover{
+    color: black;
+    background-color: #F3F3E0;
+}
+
