@@ -1,15 +1,21 @@
 /* AboutUs.css */
 .about-us {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
+    /* max-width: 800px; */
+    /* margin: 0 auto; */
     text-align: center;
   }
   
   .about-us-section {
-    background-color: #f5f5f5;
+    margin: 2rem auto;
+    max-width: 800px;
     padding: 30px;
-    border-radius: 8px;
+
+    box-sizing: border-box;
+  }
+
+  .about-us-section .title{
+    font-size: 24px;
+    font-weight: 700;
   }
   
   .about-us h2 {
@@ -23,3 +29,77 @@
     color: #333;
   }
   
+
+  .title_block {
+    width: 100%;
+    background-color: #608BC1;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+  }
+
+  .title_block p{
+    color: white;
+    margin: 1rem 0;
+  }
+
+  .title_block p:nth-child(2){
+    font-weight: 700;
+    font-size: 32px;
+  }
+
+  .about-us .image{
+    width: 100%;
+    height: 40vh;
+
+    background-image: url(./cleaning_aboutus.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+
+    box-shadow: inset 0 0 10px #484848;
+  }
+
+  .about-us-section ul{
+    list-style: none;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: flex;
+  }
+
+  .about-us-section ul li{
+    width: 100%;
+    padding: 2rem 2rem;
+    box-sizing: border-box;
+    transition: 0.3s;
+  }
+
+  .about-us-section ul li:first-child{
+    background-color: rgb(241, 187, 196);
+  }
+
+  .about-us-section ul li:nth-child(2){
+    background-color: rgb(150, 221, 42);
+  }
+
+  .about-us-section ul li:nth-child(3){
+    background-color: rgb(110, 110, 255);
+  }
+
+  .about-us-section ul li:hover{
+    transform: scale(1.2);
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  @media (max-width: 500px) {
+    .about-us-section ul{
+      flex-direction: column;
+    }
+  }

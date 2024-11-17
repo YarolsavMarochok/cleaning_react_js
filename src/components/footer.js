@@ -22,7 +22,7 @@ export default function Footer(){
                     <li>Floor cleaning</li>
                 </ul>
             </div>
-            <div className="column">
+            <div className="column"> 
                 <h3>Dalšie odkazy: </h3>
                 <ul>
                     <li>Vseobecne obchodne podmienki</li>

@@ -1,26 +1,31 @@
 // App.js
 import React from 'react';
-import navMenu from "./components/navMenu";
+import Nav from "./components/Nav";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LandingPage from "./components/landingPage";
-import AboutUs from "./components/aboutUs";
+import LandingPage from "./components/LandingPage.js";
+import AboutUs from "./components/AboutUs.js";
+import PriceList from './components/PriceList.js';
 import Footer from "./components/footer";
+import ContactUs from './components/contactUs.js';
+import "react-toastify/dist/ReactToastify.css";
 
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
       <Router>
-      <navMenu/>
+        <div className="App">
+          <Nav/>
 
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/about" element={<AboutUs />} />
-        </Routes>
-        <Footer />
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/price" element={<PriceList />} />
+            <Route path="/contact" element={<ContactUs />} />
+          </Routes>
+          <Footer />
+        </div>
       </Router>
-    </div>
   );
 }
 

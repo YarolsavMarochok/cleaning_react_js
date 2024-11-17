@@ -24,3 +24,20 @@
     list-style: none;
     line-height: 35px;
 }
+
+.footer h3{
+    color: white;
+}
+
+@media (max-width: 750px) {
+    .footer {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .footer .column{
+        width: 70%;
+        
+        margin: auto;
+    }
+}
