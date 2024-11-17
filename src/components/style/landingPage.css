@@ -162,9 +162,14 @@
   
   .flip-card {
     background-color: transparent;
-    width: 18%;
+    width: 20%;
     height: 250px;
-    perspective: 1000px;
+    /* perspective: 1000px; */
+  }
+  @media (max-width: 1350px) {
+    .woman{
+      display: none;
+    }
   }
 
   @media (max-width: 1000px) {
@@ -208,19 +213,20 @@
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
+    transition: transform 0.4s;
+    /* transform-style: preserve-3d; */
   }
   
   .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
+    /* transform: rotateY(180deg); */
+    transform: translateY(30px);
   }
   
   .flip-card-front, .flip-card-back {
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
+    /* backface-visibility: hidden; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -236,9 +242,12 @@
   }
   
   .flip-card-back {
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
     background-color: var(--card-back-color);
     color: var(--text-color);
-    transform: rotateY(180deg);
+    /* transform: rotateY(180deg); */
   }
   
   .flip-card h3 {
@@ -256,3 +265,27 @@
   .calculator_block{
     background-color: #3498db;
   }
+
+  .flip-card .readmore_link{
+    margin-top: 0.5rem;
+    color: #22659900;
+    
+    transition: 0.4s;
+    cursor: pointer;;
+  }
+
+
+  .flip-card:hover .readmore_link{
+    color: rgb(69, 69, 255);
+  }
+
+  .woman {
+    background-image: url(images/woman-house-cleaning-transparent-free-png.webp);
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    background-position: 160px;
+    background-repeat: no-repeat;
+    transition: background-position 1s ease-out; /* Smooth animation */
+}

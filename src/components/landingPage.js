@@ -2,6 +2,7 @@ import './style/landingPage.css';
 import Calculator from './Calculator';
 import { Link } from 'react-router-dom';
 
+
 export default function LandingPage() {
     return (
         <>
@@ -18,6 +19,9 @@ export default function LandingPage() {
                     </div>
                     <div className="column"></div>
                 </div>
+                <div className='woman'>
+
+                </div>
             </div>
             
             <div className="frame"> 
@@ -28,10 +32,12 @@ export default function LandingPage() {
                     <div class="flip-card-front">
                         <h3>ROMANTICKÁ ATMOSFÉRA</h3>
                         <p>Upratanie a romantika pre Vašu polovičku</p>
+                        <p className='readmore_link'>read more >>></p>
+
                     </div>
-                    <div class="flip-card-back">
+                    {/* <div class="flip-card-back">
                         <p>We create a romantic atmosphere while providing cleaning services to make it extra special for your partner.</p>
-                    </div>
+                    </div> */}
                     </div>
                 </div>
 
@@ -40,10 +46,12 @@ export default function LandingPage() {
                     <div class="flip-card-front">
                         <h3>TEPOVANIE</h3>
                         <p>Všetkých povrchov, vrátane kože</p>
+                        <p className='readmore_link'>read more >>></p>
+
                     </div>
-                    <div class="flip-card-back">
+                    {/* <div class="flip-card-back">
                         <p>Our service covers cleaning all types of surfaces, including delicate leather.</p>
-                    </div>
+                    </div> */}
                     </div>
                 </div>
 
@@ -52,10 +60,12 @@ export default function LandingPage() {
                     <div class="flip-card-front">
                         <h3>UPRATOVANIE</h3>
                         <p>Bytov a domov s dezinfekciou ZDARMA</p>
+                        <p className='readmore_link'>read more >>></p>
+
                     </div>
-                    <div class="flip-card-back">
+                    {/* <div class="flip-card-back">
                         <p>Home cleaning services with free disinfection for a safer, fresher environment.</p>
-                    </div>
+                    </div> */}
                     </div>
                 </div>
 
@@ -64,10 +74,13 @@ export default function LandingPage() {
                     <div class="flip-card-front">
                         <h3>UPRATOVANIE</h3>
                         <p>Kancelárskych a spoločenských priestorov</p>
+                        <p className='readmore_link'>read more >>></p>
+                   
                     </div>
-                    <div class="flip-card-back">
+                    {/* <div class="flip-card-back">
                         <p>Cleaning services for offices and social spaces to maintain a professional appearance.</p>
-                    </div>
+                    
+                    </div> */}
                     </div>
                 </div>
 
@@ -76,10 +89,38 @@ export default function LandingPage() {
                     <div class="flip-card-front">
                         <h3>UPRATOVANIE</h3>
                         <p>Obchodných priestorov a showroomov</p>
+                        <p className='readmore_link'>read more >>></p>
+
                     </div>
-                    <div class="flip-card-back">
+                    {/* <div class="flip-card-back">
                         <p>Comprehensive cleaning for retail spaces and showrooms to enhance customer experience.</p>
+                    </div> */}
                     </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>ПРИБИРАННЯ КІМНАТ</h3>
+                        <p>Obchodných priestorov a showroomov</p>
+                        <p className='readmore_link'>read more >>></p>
+                    </div>
+                    {/* <div class="flip-card-back">
+                        <p>Comprehensive cleaning for retail spaces and showrooms to enhance customer experience.</p>
+                    </div> */}
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>МИЙКА ВІКОН</h3>
+                        <p>Obchodných priestorov a showroomov</p>
+                        <p className='readmore_link'>read more >>></p>
+                    </div>
+                    {/* <div class="flip-card-back">
+                        <p>Comprehensive cleaning for retail spaces and showrooms to enhance customer experience.</p>
+                    </div> */}
                     </div>
                 </div>
                 </section>
@@ -88,6 +129,7 @@ export default function LandingPage() {
                 <div className="block">
                     <div className="inf_block">
                         <h2>How to Order Cleaning Services</h2>
+
                         <div className="row">
                             <div className="column">
                                 <h3>1. Reach Out!</h3>
