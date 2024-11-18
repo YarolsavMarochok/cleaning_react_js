@@ -1,20 +1,16 @@
 import { useState, useEffect } from "react";
 import './style/calculator.scss';
-
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useContext } from "react";
+import { MessageContext } from "./MessageContext";
 
-const notify = () => {
-    toast.error("Minimal space for cleaning is 20!");
-};
-
-
-function Calculator() {
-    const [size, setSize] = useState(20); // Default to the minimum value of 20
+function Calculator({ setContactMessage }) {
+    const [size, setSize] = useState(20);
     const [placeType, setPlaceType] = useState('Office');
     const [cleaningStrength, setCleaningStrength] = useState('Easy');
     const [price, setPrice] = useState(0);
-    const [priceChanged, setPriceChanged] = useState(false); // Tracks price change for animation
+    const [priceChanged, setPriceChanged] = useState(false);
 
     const calculatePrice = (type, strength, currentSize) => {
         let basePrice = 0;
@@ -31,26 +27,25 @@ function Calculator() {
 
     useEffect(() => {
         const newPrice = calculatePrice(placeType, cleaningStrength, size);
-
-        // Trigger animation by toggling `priceChanged`
         if (newPrice !== price) {
             setPriceChanged(true);
-            setTimeout(() => setPriceChanged(false), 300); // Animation duration matches SCSS transition
+            setTimeout(() => setPriceChanged(false), 300);
         }
-
         setPrice(newPrice);
     }, [size, placeType, cleaningStrength]);
 
-    const handleSizeChange = (e) => {
-        setSize(e.target.value); // Allow free typing
-    };
+    const { setMessage } = useContext(MessageContext);
 
-    const handleBlur = () => {
-        // Enforce minimum value of 20 when the input loses focus
-        if (parseFloat(size) < 20 || isNaN(parseFloat(size))) {
-            notify();
-            setSize(20);
-        }
+    const handleSend = () => {
+        const message = `
+        Cleaning Request:
+        - Size: ${size} m²
+        - Type: ${placeType}
+        - Strength: ${cleaningStrength}
+        - Total Price: €${price}
+        `;
+        setMessage(message);
+        toast.success("Details sent to Contact Us page!");
     };
 
     return (
@@ -59,43 +54,38 @@ function Calculator() {
             <input 
                 placeholder="Enter space in square meters" 
                 value={size} 
-                onChange={handleSizeChange} 
-                onBlur={handleBlur} // Enforce minimum value when leaving the field
+                onChange={(e) => setSize(e.target.value)} 
+                onBlur={() => {
+                    if (parseFloat(size) < 20 || isNaN(parseFloat(size))) {
+                        toast.error("Minimal space for cleaning is 20!");
+                        setSize(20);
+                    }
+                }} 
                 type="number" 
                 min="20" 
             />
 
-            <p>Enter type of your place (with rough estimates):</p>
+            <p>Enter type of your place:</p>
             <select value={placeType} onChange={(e) => setPlaceType(e.target.value)}>
-                <option value="Office">Office (Easy: €{calculatePrice('Office', 'Easy', size)}, Middle: €{calculatePrice('Office', 'Middle', size)}, Hard: €{calculatePrice('Office', 'Hard', size)})</option>
-                <option value="Home">Home (Easy: €{calculatePrice('Home', 'Easy', size)}, Middle: €{calculatePrice('Home', 'Middle', size)}, Hard: €{calculatePrice('Home', 'Hard', size)})</option>
-                <option value="Special">Special (Easy: €{calculatePrice('Special', 'Easy', size)}, Middle: €{calculatePrice('Special', 'Middle', size)}, Hard: €{calculatePrice('Special', 'Hard', size)})</option>
+                <option value="Office">Office</option>
+                <option value="Home">Home</option>
+                <option value="Special">Special</option>
             </select>
 
-            <p>Enter strength of cleaning (with rough estimates):</p>
+            <p>Enter strength of cleaning:</p>
             <select value={cleaningStrength} onChange={(e) => setCleaningStrength(e.target.value)}>
-                <option value="Easy">Easy (€{calculatePrice(placeType, 'Easy', size)})</option>
-                <option value="Middle">Middle (€{calculatePrice(placeType, 'Middle', size)})</option>
-                <option value="Hard">Hard (€{calculatePrice(placeType, 'Hard', size)})</option>
+                <option value="Easy">Easy</option>
+                <option value="Middle">Middle</option>
+                <option value="Hard">Hard</option>
             </select>
 
-            {/* Price display with animation */}
             <div className={`price-display ${priceChanged ? 'animated' : ''}`}>
                 <h3>Total Price: €{price}</h3>
             </div>
 
-            <ToastContainer 
-                position="top-right"
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="colored"
-            />
+            <button className="info_tocontact" onClick={handleSend}>Send to Contact Us</button>
+
+            <ToastContainer position="top-right" autoClose={3000} theme="colored" />
         </div>
     );
 }

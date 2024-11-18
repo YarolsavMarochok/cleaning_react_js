@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 
 export default function LandingPage() {
     return (
-        <>
+        <div className='landingPage'>
             <div className="slider">
                 <div className="blur_filter">
                     <div className="column">
-                        <h4 className="title">Welcome to the [Your Company]</h4>
+                        <h4 className="title">Welcome to the Cleaning Masters</h4>
                         <div className="inf_text">
                             We are dedicated to providing top-quality cleaning services that bring comfort and freshness to your space. Our team of skilled professionals is here to handle all your cleaning needs, whether it’s for your home, office, or any other location. With a commitment to excellence and attention to detail, we make sure every job is completed to the highest standards.
                             Experience the ease of a clean, welcoming environment without the hassle—let us do the work for you!
@@ -19,9 +19,7 @@ export default function LandingPage() {
                     </div>
                     <div className="column"></div>
                 </div>
-                <div className='woman'>
-
-                </div>
+                <div className='woman'></div>
             </div>
             
             <div className="frame"> 
@@ -132,42 +130,66 @@ export default function LandingPage() {
 
                         <div className="row">
                             <div className="column">
-                                <h3>1. Reach Out!</h3>
+                                <div>
+                                <h3>1. Choose Your Cleaning Type</h3>
                                 <p className="text">
-                                    Getting started is easy. Simply contact us through our website, email, or phone, and our friendly team will get back to you within a few days to discuss your specific cleaning needs. We’re here to answer any initial questions and provide guidance on the services that might work best for you.
+                                Decide what kind of cleaning service you need. We offer three main types:
+                            
+                                    <ul style={{marginLeft: "2rem"}}>
+                                        <li>Office Cleaning: Perfect for workspaces, ensuring a clean and productive environment. </li>
+                                        <li>Home Cleaning: Ideal for keeping your living space spotless and welcoming.</li>
+                                        <li>Special Cleaning: Tailored for specific needs like deep cleaning or post-renovation cleanup.</li>
+                                    </ul>
                                 </p>
+                                </div>
+
+                                <div className='calc_img img'/>
                             </div>
                             <div className="column">
-                                <h3>2. Choose Your Options and Get a Quote</h3>
-                                <p className="text">
-                                After the initial contact, you’ll receive a list of cleaning packages and options tailored to your needs. We offer flexible pricing based on the type and frequency of cleaning you need. Once you've reviewed your options, we’ll provide a clear, transparent quote with no hidden fees, so you know exactly what to expect.
-                                </p>
+                                <div>
+                                    <h3>2. Calculate Your Price</h3>
+                                    <p className="text">
+                                    Use our easy-to-use Cleaning Price Calculator
+                                    </p>
+                                </div>
+                                <div className='price_img img'/>
                             </div>
                             <div className="column">
-                                <h3>3. Contact us and set Plan the Details</h3>
-                                <p className="text">
-                                    We understand that timing is important. After choosing your preferred service, we’ll work together to finalize the timeline, ensuring that cleaning fits seamlessly into your schedule. We’ll also confirm any specific details, like areas of focus, special instructions, or requests, to make sure everything is done just the way you want.
-                                </p>
+                                <div>
+                                    <h3>3. Send Your Request</h3>
+                                    <p className="text">
+                                        Once you've calculated the price:
+
+                                        <ul style={{marginLeft: "2rem"}}>
+                                            <li>Click the "Send to Contact Us" button to transfer your cleaning details to our form automatically.</li>
+                                            <li>Go to the Contact Us page, where your request will appear in the message box.</li>
+                                            <li>Add any additional details (optional) and submit the form.</li>
+                                        </ul>                                
+                                    </p>
+                                </div>
                             </div>
                             <div className="column">
-                                <h3>4. Confirm and Relax</h3>
-                                <p className="text">
-                                    Once everything is arranged, we’ll confirm the schedule and all details with you one last time. From here, you can relax and look forward to a spotless, refreshed space. We take pride in handling every step with care and efficiency to ensure a top-quality experience for our clients.
-                                </p>
+                                <div>
+                                    <h3>4. Confirm Your Booking</h3>
+                                    <p className="text">
+                                        After submitting the form, our team will review your request and get in touch with you
+                                    </p>
+                                </div>
+                                <div className='form_img img'/>
                             </div>
                         </div>
                         <div className="row">
-                            <Link to="/contact"><button className="contact_btn">Contact Us!</button></Link>
+                            <a href="#calculator"><button className="contact_btn">Calculate price!</button></a>
                         </div>
                     </div>
                 </div>
 
                 </div>
 
-                <div className="block">
+                <div className="block" id="calculator">
                     <div className="inf_block calculator_block">
                         <h2 style={{color: 'white'}} className="calc_title">Calculate your cleaning cost</h2>
-                        <Calculator/>
+                        <Calculator />
                     </div>
                 </div>
 
@@ -179,7 +201,7 @@ export default function LandingPage() {
                             <h2>Stay Updated with Our Latest News!</h2>
                             <div className="newsletter">
                                 <div className="input-row">
-                                    <input placeholder="Your email address" className="email_input" />
+                                    <input placeholder="Your email address" className="email_input" type='email'/>
                                     <button>Subscribe</button>
                                 </div>
                             </div>
@@ -189,6 +211,6 @@ export default function LandingPage() {
 
                 
             </div>
-        </>
+        </div>
     );
 }

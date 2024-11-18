@@ -6,7 +6,7 @@ function PriceList() {
     return(
         <>
             <p className='price_title'>
-                Price List
+                Price List 
             </p>
             <section className='price_block'>
                 <div className='column'>

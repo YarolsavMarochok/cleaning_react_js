@@ -44,16 +44,17 @@
   .title_block p{
     color: white;
     margin: 1rem 0;
-  }
-
-  .title_block p:nth-child(2){
+    padding-top: 1rem;
+  
     font-weight: 700;
     font-size: 32px;
   }
 
   .about-us .image{
     width: 100%;
-    height: 40vh;
+    height: 80vh;
+
+    padding: 1rem;
 
     background-image: url(./cleaning_aboutus.jpg);
     background-repeat: no-repeat;
@@ -65,41 +66,101 @@
     box-shadow: inset 0 0 10px #484848;
   }
 
-  .about-us-section ul{
+  .about-us .image p{
+    font-size: 24px;
+    margin: 1rem;
+
+    font-weight: 700;
+  }
+
+  .about-us .image row{
+    width: 1300px;
+    margin: auto;
+
     list-style: none;
     text-decoration: none;
     font-size: 20px;
     color: white;
     display: flex;
+
+    gap: 1rem;
   }
 
-  .about-us-section ul li{
+  .about-us .image row p{
     width: 100%;
     padding: 2rem 2rem;
     box-sizing: border-box;
     transition: 0.3s;
+
+    border-radius: 10px 10px 0px 0px;
+    margin-bottom: 0;
   }
 
-  .about-us-section ul li:first-child{
+  .about-us .image row .column:first-child p:first-child{
     background-color: rgb(241, 187, 196);
   }
 
-  .about-us-section ul li:nth-child(2){
+  .about-us .image row .column:nth-child(2) p:first-child{
     background-color: rgb(150, 221, 42);
   }
 
-  .about-us-section ul li:nth-child(3){
+  .about-us .image row .column:nth-child(3) p:first-child{
     background-color: rgb(110, 110, 255);
   }
 
-  .about-us-section ul li:hover{
-    transform: scale(1.2);
+  .about-us .image row .column:hover p{
+    transform: scale(1.05);
 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-  @media (max-width: 500px) {
-    .about-us-section ul{
+  .about-us .image row .column:hover .text{
+    background-color: #fff;
+  }
+
+  .about-us .image row .column p{
+    color: white;
+  }
+
+  .about-us .image row .column .text{
+    background-color: rgba(255, 255, 255, 0.809);
+    color: black;
+
+    margin: 0 1rem;
+    font-size: 18px;
+    line-height: 40px;
+    border-radius: 0px 0px 10px 10px;
+
+    font-weight: normal;
+  }
+
+  @media (max-width: 1300px) {
+    .about-us .image row{
+      width: 1000px;
+    }
+
+    .about-us .image {
+      height: auto;
+    }
+  }
+
+  @media (max-width: 1050px) {
+    .about-us .image row{
+      width: auto;
+    }
+
+    .about-us .image row .column p{
+      border-radius: 10px;
+      margin: 0;
+    }
+
+    .about-us .image row .column .text{
+      display: none;
+    }
+  }
+
+  @media (max-width: 750px) {
+    .about-us .image row{
       flex-direction: column;
     }
   }

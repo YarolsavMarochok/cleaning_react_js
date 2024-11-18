@@ -12,8 +12,9 @@
     font-size: 30px;
     font-weight: 700;
 
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     padding: 3rem;
+    padding-top: 5rem;
 
     border: solid 2px black;
     border-right: 0px;
@@ -131,7 +132,7 @@
 
     
     .price_block .column:first-child ul li:nth-child(2)::after {
-        left: 75%;
+        left: 75%; 
         transform: translateX(-50%) scaleY(-1) rotate(-90deg);
         /* transform: scaleX(-1); */
     }

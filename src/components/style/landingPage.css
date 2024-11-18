@@ -133,6 +133,48 @@
   .input-row button:hover {
     background-color: #226699;
   }
+
+  .row .column .calc_img{
+    width: 250px;
+    height: 250px;
+
+    background-image: url(images/calculator_img.jpg);
+    background-size: cover;
+  }
+
+  .price_img{
+    width: 300px;
+    height: 65px;
+
+    background-image: url(images/price_img.png);
+    background-size: cover;
+  }
+
+  .form_img{
+    width: 300px;
+    height: 400px;
+
+    
+    background-image: url(images/form_img.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .row .column{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+  }
+
+  .row .column:nth-child(2){
+    justify-content: space-around;
+  }
+
+  .row .column:nth-child(4){
+    justify-content: space-around;
+  }
+
   
   /* Calculator Section */
   .calc_title {
@@ -185,13 +227,21 @@
         display: none;
     }
 
-    button{
+    .landingPage button{
         width: 100%;
     }
 
     .newsletter .input-row{
         flex-direction: column;
     }
+
+    .row .column{
+      flex-direction: column;
+    }
+  }
+
+  .row .column .img{
+    box-shadow: 0px 5px 10px 0px rgb(173, 173, 173);
   }
 
   @media (max-width: 750px) {
@@ -285,7 +335,17 @@
     height: 100%;
     position: absolute;
     right: 0;
-    background-position: 160px;
+    background-position: 160px 0; /* Start position */
     background-repeat: no-repeat;
-    transition: background-position 1s ease-out; /* Smooth animation */
+    animation: moveBackground 3s forwards; /* 3s duration, animation played once */
+}
+
+/* Keyframe animation */
+@keyframes moveBackground {
+    0% {
+        background-position: 700px 0; /* Start at the right */
+    }
+    100% {
+        background-position: -100px 0; /* End at the left */
+    }
 }

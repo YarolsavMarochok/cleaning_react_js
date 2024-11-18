@@ -29,7 +29,11 @@
     color: white;
 }
 
-@media (max-width: 750px) {
+.footer .column:first-child{
+    min-width: 40%;
+}
+
+@media (max-width: 880px) {
     .footer {
         flex-direction: column;
         height: auto;
@@ -40,4 +44,8 @@
         
         margin: auto;
     }
+}
+
+.footer a{
+    color: rgb(229, 229, 229);
 }
